@@ -1,9 +1,12 @@
 trigger:
-- main
+  - main
 pool:
-  vmImage: Default
+  vmImage: 'Default'  # Измените на актуальный образ, если это другой агент
 variables:
   buildConfiguration: 'Release'
 steps:
-    - script: dotnet build --configuration $(buildConfiguration)
-    displayName: 'dotnet build $(buildConfiguration)'
+- bash: |
+    echo "hello world"
+  
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
